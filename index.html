@@ -1,13 +1,194 @@
-HOME
-│
-├── About
-├── Research
-├── Notes
-│    ├── Research Notes
-│    ├── Reading Notes
-│    
-│
-└── Life
-     ├── Gallery
-     ├── Travel
-     └── Ben
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhen Hu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #f7f6f1;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 30px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #555;
+        }
+
+        nav a:hover {
+            color: #78917c;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 30px;
+        }
+
+        .hero {
+            max-width: 700px;
+            margin-bottom: 100px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #78917c;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #666;
+            max-width: 650px;
+        }
+
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #777;
+        }
+
+        footer {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                display: block;
+            }
+
+            nav {
+                margin-top: 15px;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 18px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .sections {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Zhen Hu</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="notes.html">Notes</a>
+        <a href="life.html">Life</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero">
+        <h1>Research · Notes · Life</h1>
+
+        <h2>Hi, I'm Zhen.</h2>
+
+        <p>
+            I am a Biomedical Engineering researcher interested in
+            quantitative MRI, science, and the world around me.
+        </p>
+
+        <p>
+            This is my personal space to share my research,
+            things I learn, places I explore, and moments from everyday life.
+        </p>
+    </section>
+
+    <section class="sections">
+
+        <a class="card" href="research.html">
+            <h3>Research</h3>
+            <p>
+                Quantitative MRI, MRI physics, research projects,
+                publications, and things I am working on.
+            </p>
+        </a>
+
+        <a class="card" href="notes.html">
+            <h3>Notes</h3>
+            <p>
+                Research notes, reading notes, ideas,
+                and things I find worth remembering.
+            </p>
+        </a>
+
+        <a class="card" href="life.html">
+            <h3>Life</h3>
+            <p>
+                Travel, photography, everyday moments,
+                and life with Ben.
+            </p>
+        </a>
+
+    </section>
+
+</main>
+
+<footer>
+    © 2026 Zhen Hu
+</footer>
+
+</body>
+</html>
