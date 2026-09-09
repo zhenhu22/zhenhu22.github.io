@@ -1,2 +1,2 @@
-# huzhen965278384.github.io
+# zhenhu22.github.io
 Zhen Hu's Personal Website
