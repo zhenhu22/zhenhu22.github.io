@@ -3,104 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Zhen Hu</title>
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
             background: #f7f6f1;
-            color: #333;
+            color: #263238;
             line-height: 1.6;
         }
 
+        /* ---------- Header ---------- */
+
         header {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 30px 30px 20px;
+            padding: 28px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid #e5e3dc;
         }
 
         .logo {
             font-size: 22px;
             font-weight: 600;
+            letter-spacing: -0.3px;
         }
 
         nav a {
-            margin-left: 25px;
+            margin-left: 28px;
             text-decoration: none;
             color: #555;
+            font-size: 15px;
         }
 
         nav a:hover {
-            color: #78917c;
+            color: #718878;
         }
+
+
+        /* ---------- Main ---------- */
 
         main {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 30px;
+            padding: 65px 40px 90px;
         }
 
+
+        /* ---------- Hero ---------- */
+
         .hero {
-            max-width: 700px;
-            margin-bottom: 100px;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 65px;
+            align-items: center;
+            margin-bottom: 90px;
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-text {
+            padding-right: 20px;
+        }
+
+        .eyebrow {
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #718878;
+            margin-bottom: 18px;
         }
 
         .hero h1 {
-            font-size: 56px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 52px;
             line-height: 1.1;
-            margin-bottom: 20px;
-            font-weight: 600;
+            font-weight: 500;
+            margin: 0 0 25px;
+            color: #263238;
         }
 
         .hero h2 {
-            font-size: 24px;
-            font-weight: 400;
-            color: #78917c;
-            margin-bottom: 25px;
+            font-size: 20px;
+            line-height: 1.5;
+            font-weight: 500;
+            margin: 0 0 20px;
+            color: #4d5a55;
         }
 
         .hero p {
-            font-size: 18px;
-            color: #666;
-            max-width: 650px;
+            font-size: 16px;
+            color: #68716e;
+            margin-bottom: 18px;
+            max-width: 500px;
         }
 
-        .sections {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+        .links {
+            margin-top: 28px;
         }
 
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
+        .links a {
+            margin-right: 22px;
+            color: #526b5a;
             text-decoration: none;
-            color: inherit;
-        }
-
-        .card h3 {
-            margin-top: 0;
-            font-size: 22px;
-        }
-
-        .card p {
-            color: #777;
-        }
-
-        footer {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 30px;
-            color: #999;
             font-size: 14px;
         }
 
-        @media (max-width: 700px) {
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ---------- Featured Sections ---------- */
+
+        .featured {
+            border-top: 1px solid #deddd6;
+            padding-top: 45px;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 28px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 35px;
+            min-height: 230px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card-label {
+            font-size: 12px;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: #718878;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+            font-weight: 500;
+            margin: 0 0 12px;
+        }
+
+        .card p {
+            color: #6d7471;
+            font-size: 15px;
+            max-width: 500px;
+        }
+
+        .card-link {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #526b5a;
+        }
+
+
+        /* ---------- Footer ---------- */
+
+        footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 25px 40px 35px;
+            border-top: 1px solid #e5e3dc;
+            display: flex;
+            justify-content: space-between;
+            color: #999;
+            font-size: 13px;
+        }
+
+
+        /* ---------- Mobile ---------- */
+
+        @media (max-width: 800px) {
+
             header {
+                padding: 25px;
                 display: block;
             }
 
@@ -113,81 +217,178 @@
                 margin-right: 18px;
             }
 
+            main {
+                padding: 40px 25px 70px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                margin-bottom: 65px;
+            }
+
+            .hero-text {
+                padding-right: 0;
+            }
+
             .hero h1 {
                 font-size: 42px;
             }
 
-            .sections {
+            .featured-grid {
                 grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 25px;
+                display: block;
             }
         }
     </style>
 </head>
 
+
 <body>
 
 <header>
+
     <div class="logo">Zhen Hu</div>
 
     <nav>
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
         <a href="research.html">Research</a>
         <a href="notes.html">Notes</a>
         <a href="life.html">Life</a>
     </nav>
+
 </header>
+
 
 <main>
 
+    <!-- Hero Section -->
+
     <section class="hero">
-        <h1>Research · Notes · Life</h1>
 
-        <h2>Hi, I'm Zhen.</h2>
+        <img
+            src="images/profile.jpeg"
+            alt="Zhen Hu"
+            class="hero-image"
+        >
 
-        <p>
-            I am a Biomedical Engineering researcher interested in
-            quantitative MRI, science, and the world around me.
-        </p>
+        <div class="hero-text">
 
-        <p>
-            This is my personal space to share my research,
-            things I learn, places I explore, and moments from everyday life.
-        </p>
+            <div class="eyebrow">
+                Research · Notes · Life
+            </div>
+
+            <h1>I'm Zhen Hu.</h1>
+
+            <h2>
+                I'm a PhD candidate on Biomedical Engineering Department in Johns Hopkins School of Medicine, advised by Professor Qin Qin. My research
+                interest is in quantitative MRI.
+            </h2>
+
+            <p>
+                I work on MRI methods, quantitative imaging,
+                and the intersection of engineering, computation,
+                and biomedical applications.
+            </p>
+
+            <p>
+                Outside the lab, I spend a lot of time outdoors - running, hiking, paddleboarding
+                reading, and documenting the things I find interesting along the way.
+            </p>
+
+            <div class="links">
+                <a href="about.html">More about me →</a>
+                <a href="research.html">Research →</a>
+            </div>
+
+        </div>
+
     </section>
 
-    <section class="sections">
 
-        <a class="card" href="research.html">
-            <h3>Research</h3>
-            <p>
-                Quantitative MRI, MRI physics, research projects,
-                publications, and things I am working on.
-            </p>
-        </a>
+    <!-- Featured Sections -->
 
-        <a class="card" href="notes.html">
-            <h3>Notes</h3>
-            <p>
-                Research notes, reading notes, ideas,
-                and things I find worth remembering.
-            </p>
-        </a>
+    <section class="featured">
 
-        <a class="card" href="life.html">
-            <h3>Life</h3>
-            <p>
-                Travel, photography, everyday moments,
-                and life with Ben.
-            </p>
-        </a>
+        <div class="featured-grid">
+
+            <!-- Research -->
+
+            <a href="research.html" class="card">
+
+                <div>
+
+                    <div class="card-label">
+                        Research
+                    </div>
+
+                    <h3>
+                        Quantitative MRI
+                    </h3>
+
+                    <p>
+                        MRI physics, quantitative imaging,
+                        T1 mapping, and methods development.
+                        I also keep research notes here as I work.
+                    </p>
+
+                </div>
+
+                <div class="card-link">
+                    Explore Research →
+                </div>
+
+            </a>
+
+
+            <!-- Life -->
+
+            <a href="life.html" class="card">
+
+                <div>
+
+                    <div class="card-label">
+                        Life
+                    </div>
+
+                    <h3>
+                        Hiking
+                    </h3>
+
+                    <p>
+                        Trails, mountains, places I've explored,
+                        and a few moments worth remembering.
+                    </p>
+
+                </div>
+
+                <div class="card-link">
+                    Explore Life →
+                </div>
+
+            </a>
+
+        </div>
 
     </section>
 
 </main>
 
+
 <footer>
-    © 2026 Zhen Hu
+
+    <div>
+        © 2026 Zhen Hu
+    </div>
+
+    <div>
+        Research · Notes · Life
+    </div>
+
 </footer>
 
 </body>
