@@ -27,62 +27,106 @@
     <h1>Research</h1>
 
     <p class="intro">
-        I work on quantitative MRI: building acquisition and reconstruction
-        methods that turn MR signals into maps of tissue properties.
+        I work on quantitative MRI, with a focus on pulse sequence design
+        and reconstruction for fast, whole-brain T1 mapping.
     </p>
 
-    <h2>Focus areas</h2>
+    <h2>Current work</h2>
 
-    <h3>Quantitative T1 mapping</h3>
+    <h3>Rapid 3D whole-brain T1 mapping with inversion recovery</h3>
     <p>
-        T1 maps report a physical property of tissue rather than a relative
-        image contrast, which makes them comparable across scans and sites.
-        I work on fast 3D T1 mapping using accelerated stack-of-spirals
-        acquisitions.
+        Inversion recovery is the standard reference for T1 mapping, but it
+        is slow. I developed an inversion recovery T1 mapping technique with
+        a long 3D stack-of-spirals turbo FLASH readout, with a presaturation
+        pulse and short saturation time before inversion, implemented on a
+        Philips scanner. Combined with SENSE and compressed-sensing SENSE
+        reconstruction of undersampled data, it covers the whole brain at
+        1.0 mm isotropic resolution in 3&ndash;4 minutes, and was compared
+        against a conventional 2D EPI inversion recovery sequence.
     </p>
 
-    <h3>Pulse sequence design</h3>
+    <h3>Dual flip angle T1 mapping and magnetization transfer</h3>
     <p>
-        Designing and tuning sequences on clinical scanners so that the
-        acquisition is efficient, and so that the signal model used for
-        fitting matches what the scanner actually does.
+        In in vivo dual flip angle (DFA) T1 mapping, the estimates depend on
+        the flip angle and repetition time combination used, even after B1+
+        correction. In phantoms the dependence is negligible, and I proposed
+        that magnetization transfer (MT) between water protons and
+        macromolecular protons contributes. A two-pool cross-relaxation
+        simulation is consistent with the in vivo measurements and suggests
+        that optimized acquisition parameters can reduce the variation. Combining DFA with a stack-of-spirals
+        readout and retrospective undersampling gives whole-brain 1.0 mm
+        isotropic T1 maps in about one minute.
     </p>
 
-    <h3>Accelerated reconstruction</h3>
+    <h3>T1 and macromolecular proton fraction from inversion recovery</h3>
     <p>
-        Parallel imaging (SENSE) and compressed sensing (CS-SENSE)
-        reconstruction to shorten scan time while keeping the quantitative
-        maps accurate.
+        In the two-pool MT model, the slow-relaxation coefficient of the
+        inversion recovery curve, and the inversion degree derived from it,
+        decrease monotonically with the macromolecular proton fraction. A
+        monoexponential three-parameter fit of the IR curve therefore yields
+        apparent T1 and inversion degree together, and the latter gives the
+        macromolecular proton fraction without a biexponential fit or
+        explicit MT parameters. This is validated in simulation, phantoms,
+        and in vivo brain.
     </p>
 
-    <h3>Magnetization transfer modeling</h3>
+    <h3>Model-based reconstruction for T2 mapping</h3>
     <p>
-        Accounting for magnetization transfer effects in the signal model,
-        since they can bias T1 estimates if ignored.
+        A projection-onto-convex-sets reconstruction (POCSENSE) for
+        sensitivity-encoded data, extended with a T2 decay model for
+        model-consistent reconstruction and combined with spatial
+        compressed sensing, tested on a Shepp&ndash;Logan digital phantom.
     </p>
 
     <h2>Publications</h2>
 
-    <!--
-        TODO: add the Magnetic Resonance in Medicine paper here.
-        Suggested format:
+    <ul>
+        <li>
+            <strong>Hu Z</strong>, Zhu D, Li Y, Xu J, Qin Q. Rapid 3D
+            whole-brain high-resolution T1 quantification: accelerating
+            standard inversion recovery with stack-of-spirals turbo FLASH
+            acquisition. <em>Magnetic Resonance in Medicine</em>, 2026;
+            95(2):1177&ndash;1188.
+        </li>
+    </ul>
 
-        <ul>
-            <li>
-                <strong>Hu Z</strong>, [co-authors]. Title.
-                <em>Magnetic Resonance in Medicine</em>, 2026.
-                <a href="DOI-URL">DOI</a>
-            </li>
-        </ul>
-    -->
+    <h2>Conference presentations</h2>
 
-    <p class="empty">Publication list coming soon.</p>
+    <ul>
+        <li>
+            <strong>Hu Z</strong>, Zhu D, Qin Q. Accelerating double flip
+            angle T1 mapping with stack-of-spirals acquisition.
+            <em>ISMRM Workshop on Data Sampling and Image Reconstruction</em>,
+            Sedona, AZ, 2026. Abstract 00300.
+        </li>
+        <li>
+            <strong>Hu Z</strong>, Zhu D, Qin Q. Rapid 3D whole-brain
+            high-resolution T1 quantification: accelerating standard
+            inversion recovery with stack-of-spirals FLASH acquisition.
+            <em>ISMRM Annual Meeting</em>, Hawaii, 2025. Abstract 1103.
+        </li>
+        <li>
+            <strong>Hu Z</strong>, Zhu D, Li Y, Xu J, Qin Q. A simple
+            approach for quantifying T1 and macromolecular proton fraction
+            from rapid inversion recovery with 3D stack-of-spiral FLASH
+            readout. <em>ISMRM Annual Meeting</em>, Singapore, 2024.
+            Abstract 4467.
+        </li>
+        <li>
+            <strong>Hu Z</strong>, Zhu D, Qin Q. The influence of the MT
+            effect on the accuracy of T1 quantification by the dual flip
+            angle method. <em>ISMRM Annual Meeting</em>, Toronto, 2023.
+            Abstract 3437.
+        </li>
+    </ul>
 
     <h2>Notes</h2>
 
     <p>
-        I keep shorter write-ups of things I'm learning or working through
-        in <a href="notes.html">Notes</a>.
+        Shorter write-ups of things I'm working through are in
+        <a href="notes.html">Notes</a>, including
+        <a href="notes/t1-mapping-basics.html">T1 mapping from variable
+        flip angles</a>.
     </p>
 
 </main>
