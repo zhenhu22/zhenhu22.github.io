@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T1 mapping from variable flip angles · Zhen Hu</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+    <a class="logo" href="../index.html">Zhen Hu</a>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../research.html">Research</a>
+        <a href="../notes.html" class="active">Notes</a>
+        <a href="../life.html">Life</a>
+        <a href="../contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="page">
+
+    <a class="back-link" href="../notes.html">← All notes</a>
+
+    <h1>T1 mapping from variable flip angles</h1>
+
+    <p class="meta">A short note on the DESPOT1 signal model</p>
+
+    <h2>Signal model</h2>
+
+    <p>
+        For a spoiled gradient-echo (SPGR) sequence at steady state, with
+        repetition time TR and flip angle α, the signal is
+    </p>
+
+    <div class="equation">
+        S(α) = M<sub>0</sub> · sin α · (1 − E<sub>1</sub>) / (1 − E<sub>1</sub> cos α),
+        &nbsp;&nbsp; E<sub>1</sub> = exp(−TR / T<sub>1</sub>)
+    </div>
+
+    <p>
+        M<sub>0</sub> absorbs the proton density and receive-coil scaling, so
+        it is unknown. Acquiring at two or more flip angles gives enough
+        equations to solve for both M<sub>0</sub> and T<sub>1</sub> in each voxel.
+    </p>
+
+    <h2>Linearized fit</h2>
+
+    <p>
+        Rearranging the signal equation gives a straight line:
+    </p>
+
+    <div class="equation">
+        S / sin α = E<sub>1</sub> · S / tan α + M<sub>0</sub> (1 − E<sub>1</sub>)
+    </div>
+
+    <p>
+        Plotting S / sin α against S / tan α over the flip angles, the slope
+        is E<sub>1</sub>, so
+    </p>
+
+    <div class="equation">
+        T<sub>1</sub> = −TR / ln(slope)
+    </div>
+
+    <h2>Things that bias the result</h2>
+
+    <ul>
+        <li>
+            <strong>B1 inhomogeneity.</strong> The actual flip angle is
+            k · α, where k varies across space. Using the nominal α
+            biases T1, so a B1 map is needed for accurate values,
+            especially at 3T and above.
+        </li>
+        <li>
+            <strong>Imperfect spoiling.</strong> The model assumes the
+            transverse magnetization is fully spoiled between TRs.
+        </li>
+        <li>
+            <strong>Magnetization transfer.</strong> In tissue with a
+            macromolecular pool, a single-pool model can bias the
+            apparent T1.
+        </li>
+        <li>
+            <strong>Flip-angle choice.</strong> Precision depends on which
+            angles are used; angles around the Ernst angle for the
+            expected T1 are most informative.
+        </li>
+    </ul>
+
+</main>
+
+<footer>
+    <div>© 2026 Zhen Hu</div>
+    <div>
+        <a href="../research.html">Research</a>
+        <a href="../notes.html">Notes</a>
+        <a href="../life.html">Life</a>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -4,130 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About · Zhen Hu</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: #f7f6f1;
-            color: #333;
-            line-height: 1.7;
-        }
-
-        header {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 600;
-        }
-
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: #555;
-        }
-
-        nav a:hover {
-            color: #78917c;
-        }
-
-        main {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 70px 30px 100px;
-        }
-
-        h1 {
-            font-size: 48px;
-            font-weight: 600;
-            margin-bottom: 50px;
-        }
-
-        h2 {
-            font-size: 24px;
-            font-weight: 500;
-            margin-top: 55px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 17px;
-            color: #555;
-            max-width: 720px;
-        }
-
-        .intro {
-            font-size: 22px;
-            color: #444;
-            line-height: 1.6;
-        }
-
-        .interests {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .tag {
-            background: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            color: #666;
-            font-size: 15px;
-        }
-
-        footer {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 30px;
-            color: #999;
-            font-size: 14px;
-        }
-
-        @media (max-width: 700px) {
-            header {
-                display: block;
-            }
-
-            nav {
-                margin-top: 15px;
-            }
-
-            nav a {
-                margin-left: 0;
-                margin-right: 18px;
-            }
-
-            h1 {
-                font-size: 40px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <div class="logo">Zhen Hu</div>
+    <a class="logo" href="index.html">Zhen Hu</a>
 
     <nav>
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="about.html" class="active">About</a>
         <a href="research.html">Research</a>
         <a href="notes.html">Notes</a>
         <a href="life.html">Life</a>
+        <a href="contact.html">Contact</a>
     </nav>
 </header>
 
-<main>
+<main class="page">
 
     <h1>About</h1>
 
@@ -186,7 +81,12 @@
 </main>
 
 <footer>
-    © 2026 Zhen Hu
+    <div>© 2026 Zhen Hu</div>
+    <div>
+        <a href="research.html">Research</a>
+        <a href="notes.html">Notes</a>
+        <a href="life.html">Life</a>
+    </div>
 </footer>
 
 </body>
